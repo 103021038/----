@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>相簿</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../lib/w3.css">
+</head>
+<body>
+    <h1><div style="border:2px ;">相簿</div><h1>
+        <div class="w3-content" style="max-width:800px;position:relative">
+
+<img class="mySlides" src="http://10.96.3.17/1img1/4/1.jpg" style="width:100%">
+<img class="mySlides" src="http://10.96.3.17/1img1/4/2.jpg" style="width:100%">
+<img class="mySlides" src="http://10.96.3.17/1img1/4/3.jpg" style="width:100%">
+<img class="mySlides" src="http://10.96.3.17/1img1/4/4.jpg" style="width:100%">
+
+<a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
+<a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script> 
+    <input type="button" value="回首頁" onclick="location.href='public.html'">
+</body>
+</html>
